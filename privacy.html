@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Pickleball Tracker</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #161616; }
+    a { color: #7db3ff; }
+    code { background: #2a2a2a; }
+  }
+  h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.25rem; border-bottom: 1px solid rgba(128,128,128,0.3); padding-bottom: 0.3rem; }
+  .updated { color: #888; font-size: 0.9rem; margin-top: 0; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.4rem 0; }
+  code { background: #f0f0f0; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid rgba(128,128,128,0.25); vertical-align: top; }
+  th { font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="updated">Pickleball Tracker · Last updated 17 July 2026</p>
+
+<p>Pickleball Tracker ("the app") records your pickleball matches and turns them into
+coaching feedback. This policy explains exactly what data the app touches, where it goes,
+and what control you have over it.</p>
+
+<p>The short version: your match history and health data live on your own devices and in
+your own private iCloud account. We do not have a server that stores your data, we do not
+have accounts, and we do not sell or share your data with advertisers. The one exception
+is described under "AI coaching insights" below — please read it.</p>
+
+<h2>Who we are</h2>
+<p>Pickleball Tracker is developed by an independent developer. For any privacy question or
+request, contact <a href="mailto:siva.yerramsetty999@gmail.com">siva.yerramsetty999@gmail.com</a>.</p>
+
+<h2>What the app collects</h2>
+
+<table>
+  <tr><th>Data</th><th>Why</th><th>Where it goes</th></tr>
+  <tr>
+    <td>Match records you enter — scores, opponent and partner names, venue, session type, tags, notes</td>
+    <td>To track your results and compute your stats and rating</td>
+    <td>Your device and your private iCloud database</td>
+  </tr>
+  <tr>
+    <td>Health data from Apple Health — workouts, heart rate, active energy, heart rate variability, sleep</td>
+    <td>To detect sessions automatically and relate effort and rest to your results</td>
+    <td>Your device and your private iCloud database</td>
+  </tr>
+  <tr>
+    <td>Approximate location, while you are using the app</td>
+    <td>To suggest the venue name when you log a match</td>
+    <td>Sent to Apple for reverse geocoding; the resulting venue name is saved, the coordinates are not</td>
+  </tr>
+  <tr>
+    <td>Voice notes you record</td>
+    <td>To let you dictate match notes instead of typing</td>
+    <td>Sent to Apple for speech recognition; the transcribed text is saved to your match</td>
+  </tr>
+</table>
+
+<p>The app has no accounts and no login. We do not collect your name, email address, device
+identifiers, advertising identifiers, or analytics about how you use the app.</p>
+
+<h2>Where your data is stored</h2>
+<p>Your match history and health-derived statistics are stored locally on your device and
+synchronised through Apple's CloudKit to the <strong>private database of your own iCloud
+account</strong>. That data is governed by
+<a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. We cannot read it,
+and we have no server that holds a copy. If you sign out of iCloud or disable iCloud for the
+app, syncing stops and your data stays on your device.</p>
+
+<h2>Apple Health data</h2>
+<p>The app requests read access to your workouts, heart rate, active energy burned, heart
+rate variability, and sleep analysis. On Apple Watch it also writes heart rate and active
+energy to the workout it records for you. You grant this access per data type, and you can
+change or revoke it at any time in the Health app under Sharing &rarr; Apps.</p>
+<p>Health data is used only to power the app's own statistics and coaching features. It is
+never used for advertising or marketing, never sold, and never shared with data brokers. The
+app does not provide medical advice; effort and readiness signals are shown as performance
+correlations, not health assessments.</p>
+
+<h2>AI coaching insights</h2>
+<p>When you ask for a coaching debrief or insight, the app sends a summary of your playing
+history to our backend, which forwards it to the Anthropic Claude API to generate the written
+feedback. Please read this section carefully, because it is the only case where your data
+leaves your own devices and Apple's services.</p>
+<p><strong>What is sent:</strong> aggregated, pre-computed statistics only — win/loss records,
+rating trends, point margins, tag counts, streaks, per-session summaries, the names of
+frequent opponents and partners, the venues you play at, your own match notes, and
+<em>health-derived summary figures</em>. Those health figures are: your win rate on
+under-slept versus well-rested nights, your win rate on lower versus higher heart-rate-variability
+days, your average active calories per session and per hour, and your weekly court hours and
+minutes at elevated heart rate.</p>
+<p><strong>What is never sent:</strong> raw health samples. Individual heart rate readings,
+individual sleep records, individual workouts, your location or coordinates, and your voice
+recordings are never transmitted to our backend or to Anthropic.</p>
+<p><strong>How it is handled:</strong> our backend is a stateless Cloudflare Worker. It does not
+write your data to any database or log it; it passes the summary to Anthropic, returns the
+response to your app, and retains nothing. Anthropic processes the request under its
+<a href="https://www.anthropic.com/legal/commercial-terms">commercial terms</a> and, as of this
+writing, does not train its models on data submitted through its API.</p>
+<p><strong>Your choice:</strong> these AI features are optional. If you never request a debrief or
+an insight, none of this data is ever sent anywhere.</p>
+
+<h2>Other people's names</h2>
+<p>If you record the names of opponents or partners, those names are your own match notes.
+They are stored with your data and, when you request AI coaching, the names of your frequent
+opponents and partners are included in the summary described above. If you would rather not
+share another person's name, use initials or a nickname instead.</p>
+
+<h2>Subscriptions</h2>
+<p>Pickleball Tracker offers optional auto-renewing subscriptions. All purchases are handled
+by Apple through the App Store. We never see or receive your payment details. The app checks
+your subscription status through Apple's StoreKit and stores only whether your subscription is
+currently active.</p>
+
+<h2>Children</h2>
+<p>The app is not directed at children under 13 and we do not knowingly collect data from them.</p>
+
+<h2>Your rights and controls</h2>
+<ul>
+  <li><strong>Health:</strong> revoke access per data type in the Health app under Sharing &rarr; Apps.</li>
+  <li><strong>Location, microphone, speech:</strong> revoke in iOS Settings &rarr; Privacy &amp; Security.</li>
+  <li><strong>Sync:</strong> turn off iCloud for the app in iOS Settings &rarr; your name &rarr; iCloud.</li>
+  <li><strong>Deletion:</strong> delete individual matches in the app, or delete the app and remove
+      its iCloud data in iOS Settings &rarr; your name &rarr; iCloud &rarr; Manage Storage. Because we
+      hold no copy of your data, deleting it on your side deletes it everywhere.</li>
+</ul>
+<p>Depending on where you live, you may have rights under the GDPR, the UK GDPR, or the CCPA to
+access, correct, export, or delete your personal data. Since your data resides in your own
+iCloud account and we operate no database of our own, you can exercise all of these directly
+using the controls above. We do not sell personal information and we do not share it for
+cross-context behavioural advertising. If you need help, contact us at the address above.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes materially, we will update the date at the top and note the change
+in the app's release notes.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:siva.yerramsetty999@gmail.com">siva.yerramsetty999@gmail.com</a></p>
+
+</body>
+</html>
