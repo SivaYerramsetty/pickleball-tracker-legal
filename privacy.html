@@ -34,7 +34,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Pickleball Tracker · Last updated 17 July 2026</p>
+<p class="updated">Pickleball Tracker · Last updated 25 July 2026</p>
 
 <p>Pickleball Tracker ("the app") records your pickleball matches and turns them into
 coaching feedback. This policy explains exactly what data the app touches, where it goes,
@@ -52,24 +52,28 @@ request, contact <a href="mailto:siva.yerramsetty999@gmail.com">siva.yerramsetty
 <h2>What the app collects</h2>
 
 <table>
-  <tr><th>Data</th><th>Why</th><th>Where it goes</th></tr>
+  <tr><th>Data</th><th>How it is collected</th><th>Why</th><th>Where it goes</th></tr>
   <tr>
-    <td>Match records you enter — scores, opponent and partner names, venue, session type, tags, notes</td>
+    <td>Match records — scores, opponent and partner names, venue, session type, tags, notes</td>
+    <td>Entered by you in the app</td>
     <td>To track your results and compute your stats and rating</td>
-    <td>Your device and your private iCloud database</td>
+    <td>Your device and your private iCloud database. Summaries are sent to our AI provider only if you opt in (see below)</td>
   </tr>
   <tr>
     <td>Health data from Apple Health — workouts, heart rate, active energy, heart rate variability, sleep</td>
+    <td>Read from Apple Health with your per-type permission</td>
     <td>To detect sessions automatically and relate effort and rest to your results</td>
-    <td>Your device and your private iCloud database</td>
+    <td>Your device and your private iCloud database. Raw samples are never transmitted; only derived summaries, and only if you opt in (see below)</td>
   </tr>
   <tr>
     <td>Approximate location, while you are using the app</td>
+    <td>From iOS location services, on the screen where you log a match</td>
     <td>To suggest the venue name when you log a match</td>
     <td>Sent to Apple for reverse geocoding; the resulting venue name is saved, the coordinates are not</td>
   </tr>
   <tr>
     <td>Voice notes you record</td>
+    <td>Recorded by you with the microphone</td>
     <td>To let you dictate match notes instead of typing</td>
     <td>Sent to Apple for speech recognition; the transcribed text is saved to your match</td>
   </tr>
@@ -101,23 +105,50 @@ correlations, not health assessments.</p>
 history to our backend, which forwards it to the Anthropic Claude API to generate the written
 feedback. Please read this section carefully, because it is the only case where your data
 leaves your own devices and Apple's services.</p>
-<p><strong>What is sent:</strong> aggregated, pre-computed statistics only — win/loss records,
-rating trends, point margins, tag counts, streaks, per-session summaries, the names of
-frequent opponents and partners, the venues you play at, your own match notes, and
-<em>health-derived summary figures</em>. Those health figures are: your win rate on
-under-slept versus well-rested nights, your win rate on lower versus higher heart-rate-variability
-days, your average active calories per session and per hour, and your weekly court hours and
-minutes at elevated heart rate.</p>
+
+<p><strong>You are asked first.</strong> Before anything is sent, the app shows a disclosure
+screen that lists every category of data below and names Anthropic as the recipient. Nothing
+is transmitted unless you tap "Agree &amp; Continue" on that screen.</p>
+
+<p><strong>What is sent:</strong> aggregated, pre-computed statistics only —</p>
+<ul>
+  <li>Match results: scores, win/loss records, dates, point margins, streaks, rating trends,
+      and how your games grouped into sessions</li>
+  <li>The names of the opponents and partners you log, and the venues you play at</li>
+  <li>The tags you select and the match notes you write, sent as you wrote them</li>
+  <li><em>Health-derived summary figures only</em>: your win rate on under-slept versus
+      well-rested nights, your win rate on lower versus higher heart-rate-variability days,
+      your average active calories per session and per hour, and your weekly court hours and
+      minutes at elevated heart rate</li>
+</ul>
+
 <p><strong>What is never sent:</strong> raw health samples. Individual heart rate readings,
 individual sleep records, individual workouts, your location or coordinates, and your voice
 recordings are never transmitted to our backend or to Anthropic.</p>
+
+<p><strong>What it is used for:</strong> this data is used for one purpose only — generating
+the coaching text that is returned to you. It is not used for advertising, not sold, not used
+to build a profile of you, and not used for any other product or purpose.</p>
+
 <p><strong>How it is handled:</strong> our backend is a stateless Cloudflare Worker. It does not
 write your data to any database or log it; it passes the summary to Anthropic, returns the
-response to your app, and retains nothing. Anthropic processes the request under its
-<a href="https://www.anthropic.com/legal/commercial-terms">commercial terms</a> and, as of this
-writing, does not train its models on data submitted through its API.</p>
-<p><strong>Your choice:</strong> these AI features are optional. If you never request a debrief or
-an insight, none of this data is ever sent anywhere.</p>
+response to your app, and retains nothing.</p>
+
+<p><strong>Our AI provider and equivalent protection:</strong> we share this summary only with
+Anthropic, PBC, which acts as our service provider for generating coaching feedback. Anthropic
+is contractually bound under its
+<a href="https://www.anthropic.com/legal/commercial-terms">Commercial Terms of Service</a> to
+provide protections for this data that are equivalent to those described in this policy: the
+data is processed solely to return the coaching response to you, is not used to train its
+models, is not sold, is not used for advertising, and is not disclosed to any further third
+party. We do not share your data with any other third party for any purpose.</p>
+
+<p><strong>Your choice, and how to withdraw it:</strong> these AI features are optional. If you
+never request a debrief or an insight, none of this data is ever sent anywhere. After you have
+agreed, you can withdraw your permission at any time in the app under
+<strong>Profile &rarr; AI Coach &rarr; AI Coaching Data Sharing</strong>. With that turned off,
+nothing further is sent and the app asks you again the next time you request coaching. The rest
+of the app works normally with AI sharing switched off.</p>
 
 <h2>Other people's names</h2>
 <p>If you record the names of opponents or partners, those names are your own match notes.
@@ -136,6 +167,8 @@ currently active.</p>
 
 <h2>Your rights and controls</h2>
 <ul>
+  <li><strong>AI coaching:</strong> turn sharing off at any time in the app under Profile &rarr;
+      AI Coach &rarr; AI Coaching Data Sharing.</li>
   <li><strong>Health:</strong> revoke access per data type in the Health app under Sharing &rarr; Apps.</li>
   <li><strong>Location, microphone, speech:</strong> revoke in iOS Settings &rarr; Privacy &amp; Security.</li>
   <li><strong>Sync:</strong> turn off iCloud for the app in iOS Settings &rarr; your name &rarr; iCloud.</li>
