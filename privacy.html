@@ -34,16 +34,17 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Pickleball Tracker · Last updated 25 July 2026</p>
+<p class="updated">Pickleball Tracker · Last updated 27 July 2026</p>
 
 <p>Pickleball Tracker ("the app") records your pickleball matches and turns them into
 coaching feedback. This policy explains exactly what data the app touches, where it goes,
 and what control you have over it.</p>
 
 <p>The short version: your match history and health data live on your own devices and in
-your own private iCloud account. We do not have a server that stores your data, we do not
-have accounts, and we do not sell or share your data with advertisers. The one exception
-is described under "AI coaching insights" below — please read it.</p>
+your own private iCloud account. We operate no database and store no copy of your data, we
+do not have accounts, and we do not sell or share your data with advertisers. There are two
+cases where data is sent to a server we operate — "AI coaching insights" and "Match-finished
+notifications" — and both are described in full below. Please read them.</p>
 
 <h2>Who we are</h2>
 <p>Pickleball Tracker is developed by an independent developer. For any privacy question or
@@ -77,10 +78,20 @@ request, contact <a href="mailto:siva.yerramsetty999@gmail.com">siva.yerramsetty
     <td>To let you dictate match notes instead of typing</td>
     <td>Sent to Apple for speech recognition; the transcribed text is saved to your match</td>
   </tr>
+  <tr>
+    <td>Your device's Apple push notification token, and the scores of a match you just finished</td>
+    <td>The token is issued by Apple to your iPhone; both are sent by the Apple Watch app when
+        you finish a live-scored match</td>
+    <td>To send the "your match is ready to log" notification to your iPhone</td>
+    <td>Passed through our notification server to Apple's push service — see "Match-finished
+        notifications" below</td>
+  </tr>
 </table>
 
-<p>The app has no accounts and no login. We do not collect your name, email address, device
-identifiers, advertising identifiers, or analytics about how you use the app.</p>
+<p>The app has no accounts and no login. We do not collect your name or email address, we use
+no advertising identifiers, and we run no analytics or tracking of how you use the app. The
+only device identifier we handle is the Apple push notification token described in the row
+above, which is used solely to deliver that notification to your phone.</p>
 
 <h2>Where your data is stored</h2>
 <p>Your match history and health-derived statistics are stored locally on your device and
@@ -103,8 +114,8 @@ correlations, not health assessments.</p>
 <h2>AI coaching insights</h2>
 <p>When you ask for a coaching debrief or insight, the app sends a summary of your playing
 history to our backend, which forwards it to the Anthropic Claude API to generate the written
-feedback. Please read this section carefully, because it is the only case where your data
-leaves your own devices and Apple's services.</p>
+feedback. Please read this section carefully, because it is the only case where the substance
+of your playing history leaves your own devices and Apple's services.</p>
 
 <p><strong>You are asked first.</strong> Before anything is sent, the app shows a disclosure
 screen that lists every category of data below and names Anthropic as the recipient. Nothing
@@ -150,6 +161,28 @@ agreed, you can withdraw your permission at any time in the app under
 nothing further is sent and the app asks you again the next time you request coaching. The rest
 of the app works normally with AI sharing switched off.</p>
 
+<h2>Match-finished notifications</h2>
+<p>If you score a match live on Apple Watch, the Watch app sends a short message to our
+notification server when the match ends so that your iPhone receives a "your match is ready to
+log" notification. This happens only when you use live scoring on Apple Watch. If you do not
+use the Watch app, nothing described in this section ever occurs.</p>
+<p><strong>What is sent:</strong> your iPhone's Apple push notification token (an identifier Apple
+issues so a notification can be routed to your device), and the scores of the match you just
+finished — the points for each game, when it started, how long it lasted, and the running score
+progression, so that tapping the notification can pre-fill the match for you.</p>
+<p><strong>What is never sent:</strong> your name, the names of your opponents or partners, your
+venue, your notes, and any health or location data. None of that is part of this message.</p>
+<p><strong>How it is handled:</strong> our notification server is the same stateless Cloudflare
+Worker described above. It holds no database and writes no logs — it forwards the message to
+Apple's Push Notification service, which delivers the notification to your phone, and retains
+nothing afterwards. The scores are used for one purpose only: filling in the notification and
+the match draft it opens. They are not stored by us, not analysed, not sold, and not shared
+with anyone other than Apple's push service for delivery.</p>
+<p><strong>Your choice:</strong> this message is sent only when you finish a match you have been
+scoring live on Apple Watch. If you log your matches on the iPhone instead, or do not use the
+Watch app, it never happens. Turning off notifications for Pickleball Tracker in iOS Settings
+&rarr; Notifications stops the notification from being delivered to your phone.</p>
+
 <h2>Other people's names</h2>
 <p>If you record the names of opponents or partners, those names are your own match notes.
 They are stored with your data and, when you request AI coaching, the names of your frequent
@@ -169,6 +202,7 @@ currently active.</p>
 <ul>
   <li><strong>AI coaching:</strong> turn sharing off at any time in the app under Profile &rarr;
       AI Coach &rarr; AI Coaching Data Sharing.</li>
+  <li><strong>Notifications:</strong> turn off Pickleball Tracker in iOS Settings &rarr; Notifications.</li>
   <li><strong>Health:</strong> revoke access per data type in the Health app under Sharing &rarr; Apps.</li>
   <li><strong>Location, microphone, speech:</strong> revoke in iOS Settings &rarr; Privacy &amp; Security.</li>
   <li><strong>Sync:</strong> turn off iCloud for the app in iOS Settings &rarr; your name &rarr; iCloud.</li>
