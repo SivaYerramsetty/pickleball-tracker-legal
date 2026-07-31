@@ -34,17 +34,19 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Pickleball Tracker · Last updated 27 July 2026</p>
+<p class="updated">Pickleball Tracker · Last updated 30 July 2026</p>
 
 <p>Pickleball Tracker ("the app") records your pickleball matches and turns them into
 coaching feedback. This policy explains exactly what data the app touches, where it goes,
 and what control you have over it.</p>
 
 <p>The short version: your match history and health data live on your own devices and in
-your own private iCloud account. We operate no database and store no copy of your data, we
-do not have accounts, and we do not sell or share your data with advertisers. There are two
-cases where data is sent to a server we operate — "AI coaching insights" and "Match-finished
-notifications" — and both are described in full below. Please read them.</p>
+your own private iCloud account. We operate no database and store no copy of your match or
+health data, we do not have accounts, and we do not sell or share your data with advertisers.
+Two features send data to a server we operate — "AI coaching insights" and "Match-finished
+notifications" — and, separately, the app records anonymous, non-identifying usage analytics
+through a third-party provider to understand which features are used. All three are described
+in full below. Please read them.</p>
 
 <h2>Who we are</h2>
 <p>Pickleball Tracker is developed by an independent developer. For any privacy question or
@@ -86,12 +88,23 @@ request, contact <a href="mailto:siva.yerramsetty999@gmail.com">siva.yerramsetty
     <td>Passed through our notification server to Apple's push service — see "Match-finished
         notifications" below</td>
   </tr>
+  <tr>
+    <td>Anonymous app-usage events — which features and screens you use and key steps you take
+        (for example, that a match was logged, the paywall was shown, or a debrief was
+        generated), tagged with a random anonymous identifier</td>
+    <td>Recorded automatically as you use the app</td>
+    <td>To understand which features are used so we can improve the app</td>
+    <td>Our analytics provider, PostHog — see "Product analytics" below</td>
+  </tr>
 </table>
 
-<p>The app has no accounts and no login. We do not collect your name or email address, we use
-no advertising identifiers, and we run no analytics or tracking of how you use the app. The
-only device identifier we handle is the Apple push notification token described in the row
-above, which is used solely to deliver that notification to your phone.</p>
+<p>The app has no accounts and no login. We do not collect your name or email address, and we
+use no advertising identifiers. We do record anonymous usage analytics — described under
+"Product analytics" below — but it is tied only to a random identifier generated on your
+device, never to your name, email, Apple ID, or the push token, and it is never used to track
+you across other apps or websites. The only device identifier we handle is the Apple push
+notification token described in the row above, which is used solely to deliver that
+notification to your phone.</p>
 
 <h2>Where your data is stored</h2>
 <p>Your match history and health-derived statistics are stored locally on your device and
@@ -182,6 +195,33 @@ with anyone other than Apple's push service for delivery.</p>
 scoring live on Apple Watch. If you log your matches on the iPhone instead, or do not use the
 Watch app, it never happens. Turning off notifications for Pickleball Tracker in iOS Settings
 &rarr; Notifications stops the notification from being delivered to your phone.</p>
+
+<h2>Product analytics</h2>
+<p>To understand which features people use and where the app can be improved, Pickleball
+Tracker records anonymous usage analytics through <strong>PostHog</strong>, a third-party
+product-analytics service. This is standard usage measurement — it is not advertising, and it
+is not used to track you across other apps or websites.</p>
+<p><strong>What is collected:</strong> events describing how you use the app — for example, that
+the app was opened, a match was logged (with its type, singles or doubles), the paywall was
+shown, a subscription plan was tapped or purchased, or an AI debrief was generated or shared —
+together with a few non-identifying attributes for each event (such as the plan name, or whether
+an action was a first for you). Each event is tagged with a random identifier the app generates
+on your device the first time you open it.</p>
+<p><strong>What is never sent:</strong> your name or email, your opponents' or partners' names,
+your match scores, your notes, your tags, your health data, your location, your voice notes, your
+Apple ID, and any advertising identifier. The analytics contain no personal content — only which
+features were used.</p>
+<p><strong>The identifier:</strong> the random analytics identifier is created by the app and is
+not your name, your Apple ID, your advertising identifier, or the push token described above. It
+exists only to group one device's events together so usage can be counted, and it is not linked
+to your identity.</p>
+<p><strong>Our analytics provider and equivalent protection:</strong> the events are sent to
+PostHog, Inc., which processes them on our behalf on its United States infrastructure and is bound
+by its <a href="https://posthog.com/dpa">Data Processing Agreement</a> to protect this data and use
+it only to provide the analytics service to us. As with any internet service, PostHog receives the
+network request your device makes, including its IP address; it is used only to record the event
+and, at a coarse level, the general region it came from, and is not stored against your identity.
+This data is not sold, not used for advertising, and not shared with any further third party.</p>
 
 <h2>Other people's names</h2>
 <p>If you record the names of opponents or partners, those names are your own match notes.
