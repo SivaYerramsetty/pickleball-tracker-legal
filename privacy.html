@@ -34,7 +34,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Pickleball Tracker · Last updated 30 July 2026</p>
+<p class="updated">Pickleball Tracker · Last updated 19 August 2026</p>
 
 <p>Pickleball Tracker ("the app") records your pickleball matches and turns them into
 coaching feedback. This policy explains exactly what data the app touches, where it goes,
@@ -42,11 +42,12 @@ and what control you have over it.</p>
 
 <p>The short version: your match history and health data live on your own devices and in
 your own private iCloud account. We operate no database and store no copy of your match or
-health data, we do not have accounts, and we do not sell or share your data with advertisers.
-Two features send data to a server we operate — "AI coaching insights" and "Match-finished
-notifications" — and, separately, the app records anonymous, non-identifying usage analytics
-through a third-party provider to understand which features are used. All three are described
-in full below. Please read them.</p>
+health data, we do not have accounts, and we never sell your data or share your match or health
+data with advertisers. Two features send data to a server we operate — "AI coaching insights"
+and "Match-finished notifications"; the app records anonymous, non-identifying usage analytics
+through a third-party provider to understand which features are used; and it reports app-install
+events to Meta so we can measure the ads we run for the app, using Apple's privacy-preserving
+SKAdNetwork and without tracking you. All four are described in full below. Please read them.</p>
 
 <h2>Who we are</h2>
 <p>Pickleball Tracker is developed by an independent developer. For any privacy question or
@@ -96,15 +97,25 @@ request, contact <a href="mailto:siva.yerramsetty999@gmail.com">siva.yerramsetty
     <td>To understand which features are used so we can improve the app</td>
     <td>Our analytics provider, PostHog — see "Product analytics" below</td>
   </tr>
+  <tr>
+    <td>A device identifier (your device's vendor identifier) and anonymous app events — that the
+        app was installed and opened, and similar aggregate signals</td>
+    <td>Collected automatically by the Meta (Facebook) SDK when the app launches</td>
+    <td>To measure and improve the ads we run for the app, using Apple's privacy-preserving
+        SKAdNetwork</td>
+    <td>Meta Platforms — see "Advertising measurement" below. Never used to track you across
+        other apps; the app does not request tracking permission</td>
+  </tr>
 </table>
 
 <p>The app has no accounts and no login. We do not collect your name or email address, and we
-use no advertising identifiers. We do record anonymous usage analytics — described under
-"Product analytics" below — but it is tied only to a random identifier generated on your
-device, never to your name, email, Apple ID, or the push token, and it is never used to track
-you across other apps or websites. The only device identifier we handle is the Apple push
-notification token described in the row above, which is used solely to deliver that
-notification to your phone.</p>
+never collect Apple's advertising identifier (IDFA) — the app does not ask to track you. We do
+record anonymous usage analytics — described under "Product analytics" below — tied only to a
+random identifier generated on your device, never to your name, email, or Apple ID. Two device
+identifiers are handled, each for one narrow purpose: the Apple push notification token, used
+solely to deliver the match-finished notification described above, and your device's vendor
+identifier, which the Meta SDK uses to measure the app-install ads we run (see "Advertising
+measurement" below). Neither is used to track you across other apps or websites.</p>
 
 <h2>Where your data is stored</h2>
 <p>Your match history and health-derived statistics are stored locally on your device and
@@ -222,6 +233,33 @@ it only to provide the analytics service to us. As with any internet service, Po
 network request your device makes, including its IP address; it is used only to record the event
 and, at a coarse level, the general region it came from, and is not stored against your identity.
 This data is not sold, not used for advertising, and not shared with any further third party.</p>
+
+<h2>Advertising measurement</h2>
+<p>We run ads for Pickleball Tracker on Meta's platforms (Facebook and Instagram) to help
+people discover the app. So that we can tell whether those ads actually lead to installs, the
+app includes Meta's official SDK, which reports install and app-open events back to Meta. This
+is measurement of our own advertising — the app itself shows no ads — and it is not used to
+build a profile of you or to target you across other apps.</p>
+<p><strong>What is sent:</strong> that the app was installed and opened, a small number of
+aggregate app events, and a device identifier (your device's vendor identifier). It is sent to
+Meta when the app launches.</p>
+<p><strong>What is never sent:</strong> your name or email, your match scores, your opponents'
+or partners' names, your notes, your tags, your health data, your location, and your voice
+notes. None of your playing or health data is part of this.</p>
+<p><strong>No cross-app tracking, and no advertising identifier.</strong> The app does not ask
+for permission to track you and never collects Apple's advertising identifier (IDFA). Install
+attribution is done through <strong>Apple's SKAdNetwork</strong> — a system Apple designed so
+advertisers can measure installs in aggregate, without identifying individual users — and
+through Meta's aggregated reporting. Because the app does not request tracking permission, this
+data is not combined with data from other companies' apps or websites to target ads to you.</p>
+<p><strong>Meta's role:</strong> the install and event data is received by Meta Platforms, Inc.
+and handled under <a href="https://www.facebook.com/privacy/policy/">Meta's Privacy Policy</a>
+and its terms for businesses. We use it only to measure and improve the performance of the ads
+we run for the app.</p>
+<p><strong>Your choice:</strong> because the app never asks to track you and relies on Apple's
+aggregate SKAdNetwork, there is no cross-app profile of you to opt out of. You can review the
+system-wide setting under <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong>;
+since the app does not request tracking, that control is already effectively off for it.</p>
 
 <h2>Other people's names</h2>
 <p>If you record the names of opponents or partners, those names are your own match notes.
